@@ -1,0 +1,70 @@
+<div class="container">
+
+  <!-- Outer Row -->
+  <div class="row justify-content-center">
+
+    <div class="col-xl-10 col-lg-12 col-md-9">
+
+      <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+          <!-- Nested Row within Card Body -->
+          <div class="row">
+            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+            <div class="col-lg-6">
+              <div class="p-5">
+                <div class="text-center">
+                  <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                </div>
+                <form class="user">
+                  <div class="form-group">
+                    <input type="username" class="form-control form-control-user" id="inputUsername" aria-describedby="usernameHelp" placeholder="Username" value ="test">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control form-control-user" id="inputPassword" placeholder="Password" value ="test">
+                  </div>
+                  <hr>
+                  <a class="btn btn-primary btn-user btn-block" href='#' id="userLoginBtn">
+                    Login as User
+                  </a>
+                  <hr>
+                  <a class="btn btn-success btn-user btn-block" href='#' id="orgLoginBtn">
+                    Login as Organization
+                  </a>
+                  <hr>
+                  <a class="btn btn-danger btn-user btn-block "  href='#' id="adminLoginBtn">
+                    Login as Administrator
+                  </a>
+                </form>
+                <hr>
+                <div class="text-center">
+                  <a class="small"  href='#' id="goRegister">Create an Account!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title  text-primary" id="exampleModalLongTitle">Message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-dark" id="notifyMsg">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="container">
+
+  <div class="card o-hidden border-0 shadow-lg my-5">
+    <div class="card-body p-0">
+      <!-- Nested Row within Card Body -->
+      <div class="row">
+        <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+        <div class="col-lg-7">
+          <div class="p-5">
+            <div class="text-center">
+              <h1 class="h4 text-gray-900 mb-4 org-only d-none">Create an Organization Account!</h1>
+              <h1 class="h4 text-gray-900 mb-4 user-only">Create an User Account!</h1>
+            </div>
+            <form class="user">
+              <div class="form-group">
+                  <input type="text" class="form-control form-control-user" id="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-user" id="inputEmail" placeholder="Email Address">
+                </div>
+                <div class="form-group org-only d-none">
+                  <input type="text" class="form-control form-control-user" id="address" placeholder="Address">
+                </div>
+                <div class="form-group org-only d-none">
+                  <input type="text" class="form-control form-control-user" id="orgName" placeholder="Organization Name">
+                </div>
+                <hr>
+                <a class="btn btn-success btn-user btn-block org-only d-none" href='#' id="orgRegister">
+                  Register
+                </a>
+                <hr class="org-only d-none">
+                <a class="btn btn-primary btn-user btn-block org-only d-none" href='#' id="goUserRegister">
+                  Create an User Account
+                </a>
+                <a class="btn btn-primary btn-user btn-block user-only"  href='#' id="userRegister">
+                  Register
+                </a>
+                <hr class="user-only">
+                <a class="btn btn-success btn-user btn-block user-only"  href='#' id="goOrgRegister">
+                  Create an Organization Account
+                </a>
+            </form>
+            <hr>
+            <div class="text-center" id="goLogin">
+              <a class="small" href='#'>Already have an account? Login!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title  text-primary" id="exampleModalLongTitle">Message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-dark" id="notifyMsg">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

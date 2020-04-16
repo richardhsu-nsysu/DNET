@@ -1,0 +1,214 @@
+How to test: 
+    for example test get-html function
+    enter "127.0.0.1/DNETServer/main.php?TYPE=get-html&FILENAME=login.html" on browser
+    see echo string on browser
+
+get-html
+    input
+        TYPE : get-html
+        FILENAME : XXXX
+    process
+        read file from same folder
+    outupt
+        echo file content
+
+register
+    intput
+        TYPE : register
+        GROUP : "org" | "user"
+        USERNAME : XXXX
+        EMAIL : XXXX@XXXXX
+        ADDRESS : XXXX (empty when group is user)
+        ORGNAME : XXXXXX (empty when group is user)
+    process
+        check the user input
+        send passwd to user email
+        store user info to db
+    output
+        echo any string to notify user
+        such as "register success! please go to the e-mail box to get the password"
+        or "username has exist"
+        or "error : (reason)"
+
+login
+    intput
+        TYPE : login
+        GROUP : "org" | "user" | "admin"
+        USERNAME : XXXX
+        PASSWORD : XXXXX
+    process
+        check the user input
+        set session ($_SESSION['login'] = group.":".username)
+    output
+        if success : echo "pass" 
+        if fail : echo any string to notify user
+        such as "username or password not match" or "error : (other reason)"
+
+logout
+    input
+        TYPE : logout
+    process
+        delete session
+    output
+        echo "complete"
+        
+get-key
+    input
+        TYPE : get-key
+        ORGNAME : XXXXX(fixed nsysu on first stage)
+    process
+        check session
+        get user private key
+    output
+        echo private key in string
+
+get-parameter
+    input
+        TYPE : get-parameter
+    process
+        check session
+        get user parameter(fixed on first stage)
+    output
+        echo parameter file content in string
+
+get-users
+    input
+        TYPE : get-users
+    process
+        check session (admin only)
+        get all userlist ((name1,mail1),(name2,mail2))
+    output
+        echo user list in JSON string
+
+get-org-users
+    input
+        TYPE : get-org-users
+        TARGET : XXXX(target username)
+    process
+        check session (org only)
+        get all userlist ((name1,mail1),(name2,mail2))
+    output
+        echo user list in JSON string
+
+get-orgs
+    input
+        TYPE : get-orgs
+    process
+        check session (admin only)
+        get all orglist ((orgname1,mail1,address1),(orgname2,mail2,address2))
+    output
+        echo org list in JSON
+
+get-join-orgs
+    input
+        TYPE : get-join-orgs
+        TARGET : XXXX(target username)
+    process
+        check session (user,admin only)
+        get org of paricular user have joined
+        orglist((orgname1,mail1,address1),(orgname2,mail2,address2))
+    output
+        echo org list in JSON
+
+get-notjoin-orgs
+    input
+        TYPE : get-notjoin-orgs
+        TARGET : XXXX(target username)
+    process
+        check session (user,admin only)
+        get org of paricular user not joined
+        orglist((orgname1,mail1,address1),(orgname2,mail2,address2))
+    output
+        echo org list in JSON
+
+get-user-attr(=get-user-org-attr)
+    input
+        TYPE : get-user-attr
+        USERNAME : XXXX
+        ORGNAME : XXXXX
+    process
+        check session
+        get user attr
+        echo user attr JSON string
+        [{
+            name:'age',
+            type:'range',
+            value:30
+        },{
+            name:'department',
+            type:'option',
+            value:'CSE'
+        },{
+            name:'address',
+            type:'text',
+            value:'XXXXXXXXXXXX'
+        },{
+            name:'phone',
+            type:'number'
+            value:'09XXXXXXXX'
+        }]
+
+get-org-attr
+    input
+        TYPE : get-org-attr
+        TARGET : XXXX(target orgname)
+    process
+        check session (org,admin only)
+        get org attr
+    output
+        echo org attr JSON string
+        [{
+            name:'age',
+            type:'range',
+            min:10,
+            max:100
+        },{
+            name:'department',
+            type:'option',
+            options:'CSE','EE','EEE'
+        },{
+            name:'address',
+            type:'text'
+        },{
+            name:'phone',
+            type:'number'
+        }]
+
+get-org-name
+    input
+        TYPE : get-org-name
+        USERNAME : XXXX
+    process
+        get orgname of the username
+    output
+        echo orgname
+
+set-user-attr
+    input
+        TYPE : set-user-attr
+        TARGET : XXXX(target orgname)
+    process
+        check session
+        update-user-attr
+    output
+        echo notify user msg
+
+get-org-info
+    input
+        TYPE : get-org-account
+        USERNAME : XXXX
+    process
+        check session
+        getdata  (orgname,address,email)
+    output
+        echo  (orgname,address,email)
+
+get-user-info
+    input
+        TYPE : get-user-account
+        USERNAME : XXXX
+    process
+        check session
+        getdata email
+    output
+        echo email

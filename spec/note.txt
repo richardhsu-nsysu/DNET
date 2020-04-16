@@ -1,0 +1,5 @@
+1.解決以下問題
+    (1)OE 如何利用 discover mode 服務多個 CE?
+    (3)使用ABE的必要性? 如果org和customer都必須連網取得key，那是不是直接由KGC進行policy邏輯判斷然後發對稱式的KEY會更簡單?
+    
+2.設計出完整的系統架構
